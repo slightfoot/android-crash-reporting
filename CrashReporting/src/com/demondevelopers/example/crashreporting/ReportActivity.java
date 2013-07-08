@@ -88,6 +88,7 @@ public class ReportActivity extends Activity
 		});
 		target.putExtra(Intent.EXTRA_SUBJECT, "Crash Report");
 		target.putExtra(Intent.EXTRA_TEXT, report.toString());
+		
 		ArrayList<Uri> attachments = new ArrayList<Uri>();
 		
 		String screenshot = getIntent().getStringExtra(EXTRA_SCREENSHOT);

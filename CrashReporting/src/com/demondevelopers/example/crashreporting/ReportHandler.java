@@ -70,6 +70,7 @@ public class ReportHandler
 				Bitmap bm = ReportHandler.getScreenshot();
 				if(bm != null){
 					screenshot = ReportHandler.saveScreenShot(bm);
+					bm.recycle();
 				}
 				// Bring up crash dialog
 				sAppContext.startActivity(ReportActivity
@@ -80,7 +81,7 @@ public class ReportHandler
 					Log.e(TAG, "Error reporting crash", t2);
 				}
 				catch(Throwable t3){
-					// Even Slog.e() fails! Oh well.
+					// Even Log.e() fails! Oh well.
 				}
 			}
 			finally{
@@ -100,16 +101,18 @@ public class ReportHandler
 		
 		// Not perfect.. but it'll have to do.
 		ApplicationErrorReport report = new ApplicationErrorReport();
-		report.installerPackageName = pm.getInstallerPackageName(packageName);
+		report.installerPackageName   = pm.getInstallerPackageName(packageName);
 		report.packageName = packageName;
 		report.processName = packageName;
-		report.time = System.currentTimeMillis();
-		report.systemApp = false;
-		report.type = ApplicationErrorReport.TYPE_CRASH;
-		report.crashInfo = new ApplicationErrorReport.CrashInfo(th);
+		report.time        = System.currentTimeMillis();
+		report.systemApp   = false;
+		report.type        = ApplicationErrorReport.TYPE_CRASH;
+		report.crashInfo   = new ApplicationErrorReport.CrashInfo(th);
 		
-		sAppContext.startActivity(new Intent(Intent.ACTION_APP_ERROR).setPackage("com.google.android.feedback")
-			.putExtra(Intent.EXTRA_BUG_REPORT, report).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+		sAppContext.startActivity(new Intent(Intent.ACTION_APP_ERROR)
+			.setPackage("com.google.android.feedback")
+			.putExtra(Intent.EXTRA_BUG_REPORT, report)
+			.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 	}
 	
 	public static Bitmap getScreenshot()
