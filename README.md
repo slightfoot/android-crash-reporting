@@ -3,6 +3,9 @@ by Simon Lightfoot <simon@demondevelopers.com>
 
 Example of how you can custom roll-your-own crash reporting for your app.
 
+You can download the sample APK from here:
+https://github.com/slightfoot/android-crash-reporting/releases/v1.0
+
 This quick example will capture the following information:
 *  Basic application details
 *  Stack-trace and reason for crash
