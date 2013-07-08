@@ -1,4 +1,11 @@
-android-crash-reporting
-=======================
+# Android Crash Reporting
+by Simon Lightfoot <simon@demondevelopers.com>
 
-Android Crash Reporting
+Example of how you can custom roll-your-own crash reporting for your app.
+
+This quick example will capture the following information:
+*  Basic application details: Application Package, Version Name, Version Code
+*  Stack-trace and reason for crash
+*  Screenshot of your app when the crash happened
+*  Android event log
+*  Android system log
