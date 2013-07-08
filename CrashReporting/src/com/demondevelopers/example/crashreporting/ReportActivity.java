@@ -14,7 +14,7 @@ import android.os.Bundle;
 
 
 /**
- * Builds the report and creates a send multiple intent with attachments
+ * Builds the report and creates a ACTION_SEND_MULTIPLE intent with attachments
  * 
  * Note: Check the AndroidManifest as this is started in a new process which
  * also must be where the ContentProvider is hosted!
