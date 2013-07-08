@@ -9,3 +9,5 @@ This quick example will capture the following information:
 *  Screenshot of your app when the crash happened
 *  Android event log
 *  Android system log
+
+__NOTE: It does not generate crash reports when you are debugging your app.__
