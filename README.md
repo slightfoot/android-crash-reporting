@@ -1,7 +1,7 @@
 # Android Crash Reporting
 by Simon Lightfoot <simon@demondevelopers.com>
 
-Example of how you can custom roll-your-own crash reporting for your app.
+Example of how you can roll-your-own custom crash reporting for your app.
 
 You can download the sample APK from here:
 https://github.com/slightfoot/android-crash-reporting/releases/v1.0
