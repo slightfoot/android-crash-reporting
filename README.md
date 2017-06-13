@@ -1,5 +1,5 @@
 # Android Crash Reporting
-by Simon Lightfoot <simon@demondevelopers.com>
+by Simon Lightfoot
 
 Example of how you can roll-your-own custom crash reporting for your app.
 
